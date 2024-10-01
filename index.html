@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/js/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Desserts</h1>
+        <div class="products">
+          <template class="products-template">
+            <div class="products-card">
+              <img src="" alt="" class="products-img" />
+              <div class="product-details">
+                <p class="product-categiry">Waffle</p>
+                <h3 class="product-title">Chocolate Waffle</h3>
+                <p class="product-price">$6.50</p>
+              </div>
+              <a href="" class="add-to-cart"
+                ><i class="bi bi-cart-plus"></i>Add to cart</a
+              >
+            </div>
+          </template>
+        </div>
+      </section>
+      <aside>
+        <div class="cart-container">
+          <h2>Your Cart (<span class="total-item">0</span>)</h2>
+
+          <div class="cart-content">
+            <template class="cart-template">
+              <div class="cart-item">
+                <div class="cart-value">
+                  <h3 class="cart-title"></h3>
+                  <div class="cart-prices">
+                    <p class="cart-quantity"></p>
+                    <p class="cart-price"></p>
+                    <p class="cart-total"></p>
+                  </div>
+                </div>
+                <button class="remove-btn">
+                  <img src="/assets/images/icon-remove-item.svg" alt="" />
+                </button>
+              </div>
+            </template>
+
+            <div class="empty-item">
+              <img src="/assets/images/illustration-empty-cart.svg" alt="" />
+              <p>Your added items will appear here</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
