@@ -90,6 +90,7 @@ const showCart = () => {
         <p>Your added items will appear here</p>
       </div>
     `;
+
     totalProducts.textContent = 0; // Establecer total de productos a 0
   } else {
     // Si el carrito tiene productos, recorrer cada producto
@@ -107,6 +108,9 @@ const showCart = () => {
       cartClone.querySelector(".cart-total").textContent = `$${(
         product.price * product.quantity
       ).toFixed(2)}`;
+      cartClone
+        .querySelector(".remove-btn")
+        .addEventListener("click", removeItemCart);
 
       // Actualizar los totales
       total += product.price * product.quantity;
@@ -140,15 +144,19 @@ const showCart = () => {
     // Si el div ya existe, simplemente actualizar el total
     totalDiv.querySelector(".total-price").textContent = `$${total.toFixed(2)}`;
   }
-};
 
-totalProducts.textContent = totalItems; // Actualizar el número total de productos
+  // Si no hay artículos en el carrito, limpiar el contenido
+  if (totalItems === 0) {
+    totalDiv.innerHTML = "";
+  }
+};
 
 cartContent.appendChild(fragment); // Insertar los productos del carrito en el DOM
 
 // Función para eliminar productos del carrito
 const removeItemCart = (e) => {
   e.preventDefault();
+  console.log("Remove");
   const btnRemove = e.target.closest(".remove-btn").parentElement; // Obtener el contenedor del producto a eliminar
   const productName = btnRemove.querySelector(".cart-title").textContent; // Obtener el nombre del producto
   delete productList[productName]; // Eliminar el producto del carrito
