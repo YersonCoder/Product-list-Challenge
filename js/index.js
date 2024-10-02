@@ -127,13 +127,13 @@ const showCart = () => {
     totalDiv.classList.add("cart-total-value");
     totalDiv.innerHTML = `
       <div class="cart-total-price">
-        <h3>Total</h3>
-        <p class="total-price">$${total.toFixed(2)}</p>
+        <p>Order total</p>
+        <h3 class="total-price">$${total.toFixed(2)}</h3>
       </div>
       <div class="carbon-message">
-        <p>this is a <span>carbon-neutral</span> delivery</p>
+        <p><img src="/assets/images/icon-carbon-neutral.svg" alt="carbon-neutral"> this is a <span>carbon-neutral</span> delivery</p>
       </div>
-      <button class="checkout-btn">Checkout</button>
+      <button class="checkout-btn">Confirm order</button>
     `;
     cartContent.appendChild(totalDiv); // Añadir el div con el total al final del carrito
   } else {
