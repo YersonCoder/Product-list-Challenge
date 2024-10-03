@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Función para obtener los productos de un archivo JSON
 const fetchProducts = async () => {
   try {
-    const response = await fetch("data.json"); // Obtener datos del archivo JSON
+    const response = await fetch("./data.json"); // Obtener datos del archivo JSON
     const products = await response.json(); // Convertir la respuesta a JSON
     displayProducts(products); // Mostrar los productos en la página
   } catch (error) {
@@ -86,7 +86,7 @@ const showCart = () => {
   if (Object.keys(productList).length === 0) {
     cartContent.innerHTML = `
       <div class="empty-item">
-        <img src="/assets/images/illustration-empty-cart.svg" alt="" />
+        <img src="./assets/images/illustration-empty-cart.svg" alt="" />
         <p>Your added items will appear here</p>
       </div>
     `;
@@ -135,7 +135,7 @@ const showCart = () => {
         <h3 class="total-price">$${total.toFixed(2)}</h3>
       </div>
       <div class="carbon-message">
-        <p><img src="/assets/images/icon-carbon-neutral.svg" alt="carbon-neutral"> this is a <span>carbon-neutral</span> delivery</p>
+        <p><img src="./assets/images/icon-carbon-neutral.svg" alt="carbon-neutral"> this is a <span>carbon-neutral</span> delivery</p>
       </div>
       <button class="checkout-btn">Confirm order</button>
     `;
